@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Fireworks } from './components/Fireworks';
 import { FloatingElements } from './components/FloatingElements';
 import { Home } from './pages/Home';
@@ -17,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<CreateWish />} />
           <Route path="/wish" element={<ViewWish />} />
+          {/* Catch all route - redirect to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </BrowserRouter>

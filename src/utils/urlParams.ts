@@ -32,6 +32,8 @@ export const decodeWishParams = (search: string) => {
 };
 
 export const getShareableUrl = (baseUrl: string, name: string, message: string = DEFAULT_MESSAGE): string => {
+  // Ensure baseUrl doesn't end with a slash
+  const cleanBaseUrl = baseUrl.replace(/\/+$/, '');
   const params = encodeWishParams(name, message);
-  return `${baseUrl}${params ? `?${params}` : ''}`;
+  return `${cleanBaseUrl}?${params}`;
 };

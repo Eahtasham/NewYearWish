@@ -57,7 +57,7 @@ export const ViewWish = () => {
           transition={{ delay: 0.3 }}
           className="mt-12 p-8 bg-black/40 backdrop-blur-lg rounded-2xl text-center shadow-xl"
         >
-          <p className="text-xl text-white leading-relaxed">
+          <p className="text-xl text-white leading-relaxed whitespace-pre-wrap">
             {wish.message}
           </p>
         </motion.div>

@@ -7,7 +7,9 @@ export const handleNavigation = (
 ) => {
   // Ensure any ongoing animations are completed
   setTimeout(() => {
-    navigate(path);
+    // Remove any double slashes in the path
+    const cleanPath = path.replace(/\/+/g, '/');
+    navigate(cleanPath);
     if (callback) {
       callback();
     }
