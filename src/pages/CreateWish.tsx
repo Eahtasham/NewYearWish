@@ -7,12 +7,14 @@ import { encodeWishParams } from '../utils/urlParams';
 import { AdSpaces } from '../components/AdSpaces';
 import { handleNavigation } from '../utils/navigation';
 
+const DEFAULT_MESSAGE = "Wishing you a spectacular New Year filled with endless possibilities, joy, and success! May 2024 bring you everything your heart desires. 🎉✨";
+
 export const CreateWish = () => {
   const navigate = useNavigate();
   const [showCountdown, setShowCountdown] = useState(false);
   const [formData, setFormData] = useState({
     from: '',
-    message: 'Wishing you a spectacular New Year filled with endless possibilities, joy, and success! May 2024 bring you everything your heart desires. 🎉✨'
+    message: DEFAULT_MESSAGE
   });
 
   const handleSubmit = (e: React.FormEvent) => {
